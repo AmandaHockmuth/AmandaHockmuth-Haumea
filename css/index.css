@@ -1,3 +1,7 @@
+html {
+      scroll-behavior: smooth;
+}
+
 body {
       background-color: rgb(192, 218, 244);
       color: #fff;
@@ -14,6 +18,7 @@ body {
 }
 
 h1 {
+      margin-top: 75px;
       width: 100%;
       position: absolute;
       background-color: rgba(0, 0, 0, 0.5);
@@ -30,11 +35,21 @@ h2 {
       color: rgba(192, 218, 244, 0.7);
 }
 
-.main {
-      margin:50px;
+.navigation {
+      position: fixed;
+      width: 100%;
+      list-style-position: inside;
+      background-color: rgba(0, 0, 0, 0.5);
+      box-sizing: border-box;
+      text-align: center;
+	list-style: none;
 }
 
-.about {
+header li:hover {
+      opacity: 0.5;
+}
+
+#about {
       background-color: rgba(0, 0, 0, 0.5);
       text-align: center;
       padding: 10px;
@@ -47,14 +62,7 @@ h2 {
       font-size: 20px;
 }
 
-.experience {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 10px;
-      box-sizing: border-box;
-      margin: 20px;
-}
-
-.experience-list li {
+#experience {
       background-color: rgba(0, 0, 0, 0.5);
       padding: 10px;
       box-sizing: border-box;
@@ -65,7 +73,35 @@ a {
       color: rgb(192, 218, 244);
 }
 
-.connect {
+a:hover {
+      opacity: 0.5;
+}
+
+#skills {
+      background-color: rgba(0, 0, 0, 0.5);
+      text-align: center;
+      padding: 10px;
+      box-sizing: border-box;
+      margin: 20px;
+}
+
+.skills-body {
+      font-size: 20px;
+}
+
+#projects {
+      background-color: rgba(0, 0, 0, 0.5);
+      text-align: center;
+      padding: 10px;
+      box-sizing: border-box;
+      margin: 20px;
+}
+
+.projects-body {
+      font-size: 20px;
+}
+
+#connect {
       background-color: rgba(0, 0, 0, 0.5);
       padding: 10px;
       box-sizing: border-box;
@@ -77,11 +113,31 @@ a {
 }
 
 .connect-list {
-      list-style-position: inside;
-      background-color: rgba(0, 0, 0, 0.5);
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
       text-align: center;
-	list-style: none;
+}
+
+.flex-container {
+      display: flex;
+}
+
+.flex-container div {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 5px;
+      box-sizing: border-box;
+      margin: 5px;
+      flex: 1;
+}
+
+.connect-list li:hover {
+      opacity: 0.5;
+}
+
+ul {
+      list-style-position: inside;
+      list-style: none;
+}
+
+ol {
+      list-style-position: inside;
+      list-style: none;
 }
