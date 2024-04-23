@@ -52,6 +52,14 @@ ol {
       list-style: none;
 }
 
+.subsection {
+      background-color: rgba(0, 0, 0, 0.5);
+      box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.4);
+      padding: 10px;
+      box-sizing: border-box;
+      margin: 20px;
+}
+
 /*********** SECTIONS ***********/
 /* Navigation */
 
@@ -91,12 +99,7 @@ ol {
 /* About */
 
 #about {
-      background-color: rgba(0, 0, 0, 0.5);
-      box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.4);
       text-align: center;
-      padding: 10px;
-      box-sizing: border-box;
-      margin: 20px;
 }
 
 .about-body {
@@ -107,11 +110,6 @@ ol {
 /* Experience */
 
 #experience {
-      background-color: rgba(0, 0, 0, 0.5);
-      box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.4);
-      padding: 10px;
-      box-sizing: border-box;
-      margin: 20px;
 }
 
 .exp-flex-container {
@@ -132,12 +130,7 @@ ol {
 /* Skills */
 
 #skills {
-      background-color: rgba(0, 0, 0, 0.5);
-      box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.4);
       text-align: left;
-      padding: 10px;
-      box-sizing: border-box;
-      margin: 20px;
 }
 
 .skills-body {
@@ -146,12 +139,7 @@ ol {
 /* Projects */
 
 #projects {
-      background-color: rgba(0, 0, 0, 0.5);
-      box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.4);
       text-align: center;
-      padding: 10px;
-      box-sizing: border-box;
-      margin: 20px;
 }
 
 .projects-body {
@@ -160,10 +148,6 @@ ol {
 /* Connect */
 
 #connect {
-      background-color: rgba(0, 0, 0, 0.5);
-      box-shadow: 5px 2px 2px rgba(0, 0, 0, 0.4);
-      padding: 10px;
-      box-sizing: border-box;
       margin-bottom: 20px;
 }
 
