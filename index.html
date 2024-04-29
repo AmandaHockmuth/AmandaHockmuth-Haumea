@@ -26,11 +26,11 @@
       <h1>Amanda Hockmuth</h1>
             <img class="header-image" src="https://scontent.fric1-1.fna.fbcdn.net/v/t1.6435-9/149175496_10207651864571418_1867992843206573529_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=_RPNpdjM-0cAX9NdUt8&_nc_ht=scontent.fric1-1.fna&oh=00_AfBMm2vAVEOUDCCOKlWI3EqlrFI7BdA2CbfrfGj9pZpIaQ&oe=66242F42" alt="Amanda Standing at the Edge and Looking out over the Grand Canyon">
       <div class="main">
-            <section id="about">
+            <section id="about" class="subsection">
                   <h2>About</h2>
                         <p class="about-body">Amanda grew up in Michigan, and moved across the country at 18 to pursue her Bachelor of Science in Zoology at NC State University. Achieving that Bachelor of Science in Zoology lead to her first love, Zookeeping. Caring for wolves, tigers, and cheetah was the professional love of her life, but unfortunately a career of passion often does not provide enough financially to pay the bills and make a life. Zookeeping was no exception. An unexpected second love has become coding. The same problem solving skills that served her in carnivore care have proven to make the endless puzzle of learning different coding languages a fulfilling new adventure.</p>
             </section>
-            <section id="experience">
+            <section id="experience" class="subsection">
                   <h2 >Experience</h2>
                         <ol class="experience-list">
                               <li><div class="exp-flex-container">
@@ -59,15 +59,15 @@
                               </li>
                         </ol>
             </section>
-            <section id="skills">
+            <section id="skills" class="subsection">
                   <h2 id="skills-header">Skills</h2>
                         <ul></ul>
             </section>
-            <section id="projects">
+            <section id="projects" class="subsection">
                   <h2>Projects</h2>
                         <p class="projects-body"></p>
             </section>
-            <section id="connect">
+            <section id="connect" class="subsection">
                   <h2 id="connect-header">Connect</h2>
                         <ul class="connect-list">
                         <div class="con-grid-container">
@@ -77,6 +77,20 @@
                               <div><li><a href="mailto:alswayze@alumni.ncsu.edu" target="_blank" rel="noopener noreferrer"><img class="connect-icon" alt="email icon" src="https://www.logo.wine/a/logo/Gmail/Gmail-Logo.wine.svg"></a></li></div>
                         </ul>
                         </div>
+            </section>
+            <section id="leaveMessage" class="subsection">
+                  <h2>Leave a Message</h2>
+                  <form id="leave_message">
+                        <input type="text" name="usersName" id="usersName" required="true">User's Name</input><br>
+                        <input type="email" name="usersEmail" id="usersEmail" required="true">User's Email</input><br>
+                        <textarea name="usersMessage" id="usersMessage" required="true">A Penny for your Thoughts...</textarea><br>
+                        <button type="submit">Submit</button>
+                  </form>
+            </section>
+            <section id="messages" class="subsection" style="display: none;">
+                  <h2>Messages</h2>
+                  <ul id="messages-list">
+                  </ul>
             </section>
       </div>
       <script src="js/index.js"></script>
