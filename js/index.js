@@ -1,19 +1,25 @@
 const today = new Date();
 let thisYear = today.getFullYear();
 
+function createButton(text) {
+  const button = document.createElement("button");
+  button.innerText = text;
+  button.type = "button";
+  return button;
+}
+
 ///SKILLS///
 
 let skills = ["HTML", "CSS", "JavaScript", "GitHub"];
 
 const skillsSection = document.querySelector("#skills");
-
 const skillsList = skillsSection?.querySelector("ul");
 
-for (let i = 0; i < skills.length; i++) {
+skills.forEach((s) => {
   const skill = document.createElement("li");
-  skill.innerHTML = `${skills[i]}`;
+  skill.innerHTML = `${s}`;
   skillsSection?.appendChild(skill);
-}
+});
 
 const technicalSkills = document.createElement("h3");
 technicalSkills.className = "technical-skills";
@@ -36,11 +42,11 @@ fetch(`https://api.github.com/users/AmandaHockmuth/repos`)
     return response.json();
   })
   .then((repositories) => {
-    for (i = 0; i < repositories.length; i++) {
+    repositories.forEach((repo) => {
       const project = document.createElement("li");
-      project.innerHTML = `${repositories[i].name}`;
+      project.innerHTML = `${repo.name}`;
       projectList?.appendChild(project);
-    }
+    });
   })
   .catch((err) => {
     const project = document.createElement("li");
@@ -50,32 +56,47 @@ fetch(`https://api.github.com/users/AmandaHockmuth/repos`)
 
 ///MESSAGES///
 
-const messageForm = document.querySelector("form");
 const messages = document.querySelector("#messages");
+const messageForm = document.querySelector("form");
 
 messageForm?.addEventListener("submit", (submission) => {
   submission.preventDefault();
   messages.style.display = "block";
-  const usersName = submission.target?.usersName.value;
-  const usersEmail = submission.target?.usersEmail.value;
-  const usersMessage = submission.target?.usersMessage.value;
-  console.log(usersName);
-  console.log(usersEmail);
-  console.log(usersMessage);
-  const messageList = messages?.querySelector("ul");
-  const newMessage = document.createElement("li");
-  newMessage.innerHTML = `<a href="mailto:${usersEmail}" target="_blank" rel="noopener noreferrer"> ${usersName} </a><span>${usersMessage}</span>`;
-  const removeButton = document.createElement("button");
-  removeButton.className = "removeButton";
-  removeButton.innerHTML = "Remove";
+  const newMessage = createMessage(submission);
+  const removeButton = createRemoveButton();
   newMessage.appendChild(removeButton);
-  removeButton.addEventListener("click", (removeEntry) => {
-    const entry = removeButton.parentNode;
-    removeEntry = entry?.remove();
-  });
-  messageList?.appendChild(newMessage);
-  messageForm?.reset();
+  messages?.appendChild(newMessage);
+  messageForm.reset();
 });
+
+///Messages Hoisted Functions///
+
+function createRemoveButton() {
+  const removeButton = createButton("Remove");
+  removeButton.addEventListener("click", (event) => {
+    const entry = event.target.parentNode;
+    entry.remove();
+    messages.style.display = "none";
+  });
+  return removeButton;
+}
+
+function getUserDetails(submission) {
+  return {
+    email: submission.target.usersEmail.value,
+    name: submission.target.usersName.value,
+    message: submission.target.usersMessage.value,
+  };
+}
+
+function createMessage(submission) {
+  const { email, name, message } = getUserDetails(submission);
+  const msg = document.createElement("li");
+  msg.innerHTML = `
+      <a href=mailto:${email} >${name}</a>
+      <span>${message}</span>`;
+  return msg;
+}
 
 ///FOOTER///
 
